@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from my_project.views import saludo
-from my_project.views import segunda_vista
+from my_project.views import segunda_vista, mi_nombre_es
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludo/', saludo),
     path('segunda_vista/', segunda_vista),
+    path('mi_nombre_es/<nombre>/', mi_nombre_es)
 ]
