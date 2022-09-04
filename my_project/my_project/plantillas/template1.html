@@ -10,5 +10,19 @@
     <h1>Prueba</h1>
     <p>Mi nombre es {{nombre}}</p><br>
     <p> Mi apellido es {{apellido}}</p>
+    Los hermanos son:<br>
+    {% for hermano in Hermano %}
+        <br>Nombre: {{Hermano.nombre}}
+        <br>Apellido: {{Hermano.apellido}}
+        <br>Edad: {{Hermano.edad}}
+        <br>Cumpleaños: {{Hermano.cumpleaños}}
+    {% endfor %}
+    Los Padres son:<br>
+    {% for hermano in Hermano %}
+        <br>Nombre: {{Padres.nombre}}
+        <br>Apellido: {{Padres.apellido}}
+        <br>Edad: {{Padres.edad}}
+        <br>Cumpleaños: {{Padres.cumpleaños}}
+    {% endfor %}
 </body>
 </html>

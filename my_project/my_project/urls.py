@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from my_project.views import saludo
 from my_project.views import segunda_vista, mi_nombre_es
-
+from my_project.views import pueba_template, pueba_template_legacy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludo/', saludo),
     path('segunda_vista/', segunda_vista),
-    path('mi_nombre_es/<nombre>/', mi_nombre_es)
+    path('mi_nombre_es/<nombre>/', mi_nombre_es),
+    path('intento1/', pueba_template),
+    path('intento2/', pueba_template_legacy),
 ]

@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.template import Template, Context
+from django.template import Template, Context, loader
 from datetime import datetime, timedelta
 
 def saludo(request):
@@ -17,9 +17,18 @@ def mi_nombre_es(request, nombre):
 
 
 def pueba_template(request):
-    with open("C:\Users\Nathan Drake\Desktop\practica_python\my_project\my_project\plantillas\template1.html") as archivo:
+    with open("my_project\my_project\plantillas\template1.html") as archivo:
         plantilla = Template(archivo.read())
     diccionario = {'nombre': 'Fede', 'apellido' : 'Maguera'} 
-    contexto = Context()
+    contexto = Context(diccionario)
     documento_html=plantilla.render(contexto)
-    return HttpResponse(documento_html)
+    return HttpResponse(documento_html) 
+
+
+def pueba_template_legacy(request):
+    diccionario = {'my_project\db.sqlite3'} 
+    plantilla = loader.get_template('template1.html')
+    documento_html=plantilla.render(diccionario)
+    return HttpResponse(documento_html) 
+
+
